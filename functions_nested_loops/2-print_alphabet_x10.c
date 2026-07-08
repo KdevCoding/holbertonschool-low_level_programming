@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
- * print_alphabet - prints alphabet x10  in lower case using ascii
+ * print_alphabet_x10 - prints alphabet x10  in lower case using ascii
  *
  * Return: 0 always
  */
-void print_alphabet_x10(void)
+int print_alphabet_x10(void)
 {
 	int l = 0;
+
 	while (l < 10)
 	{
 		int i = 97;
@@ -21,5 +22,5 @@ void print_alphabet_x10(void)
 		_putchar ('\n');
 		l++;
 	}
-	return;
+	return (0);
 }
