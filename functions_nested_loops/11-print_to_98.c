@@ -1,29 +1,29 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * jack_bauer - prints every minute of the day
+ * print_to_98 - prints all integers from n to 98
+ * @n: value to start from
  *
- * Return: always 0
  */
 
-void jack_bauer(void)
+void print_to_98(int n)
 {
-	int hour = 0, min = 0;
+	int d = 98 - n;
 
-	while (hour < 24)
+	if (d > 0)
 	{
-		while (min < 60)
+		while (d-- > 0)
 		{
-			_putchar((hour / 10) + '0');
-			_putchar((hour % 10) + '0');
-			_putchar(':');
-			_putchar((min / 10) + '0');
-			_putchar((min % 10) + '0');
-			_putchar('\n');
-			min++;
+			printf("%d, ", n++);
 		}
-		hour++;
-		min = 0;
 	}
 
+	else if (d < 0)
+	{
+		while (d++ < 0)
+		{
+			printf("%d, ", n--);
+		}
+	}
+	printf("%d\n", n++);
 }
