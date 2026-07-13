@@ -21,13 +21,15 @@ int  main(void)
 		t = i % 3;
 		f = i % 5;
 		if (t == 0)
-			printf("Fizz ");
+			printf("Fizz");
 
 		if (f == 0)
-			printf("Buzz ");
+			printf("Buzz");
 		if (t != 0 && f != 0)
-			printf("%i ", i);
+			printf("%i", i);
 		i++;
+
+		putchar(' ');
 	}
 	putchar('\n');
 	return (0);
