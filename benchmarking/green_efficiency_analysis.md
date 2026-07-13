@@ -1,5 +1,5 @@
 # Green Efficiency Analysis
-
+Claude AI assisted in writing this report
 ## Measurement Methodology
 
 Three experiments were run to compare algorithmic efficiency. The first measured a simple loop of 100,000,000 iterations, repeated three times, producing execution times of 0.057805, 0.060806, and 0.063128 seconds. This established a baseline for how long a fixed, large number of trivial operations takes on the test machine, and confirmed that repeated runs of the same workload produce consistent, low-variance timings.
