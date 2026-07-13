@@ -22,15 +22,14 @@ int  main(void)
 		f = i % 5;
 		if (t == 0)
 			printf("Fizz");
-
 		if (f == 0)
 			printf("Buzz");
 		if (t != 0 && f != 0)
 			printf("%i", i);
-		i++;
 
 		if (i != 100)
 			putchar(' ');
+		i++;
 	}
 	putchar('\n');
 	return (0);
