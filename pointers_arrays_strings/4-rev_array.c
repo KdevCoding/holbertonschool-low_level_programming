@@ -2,15 +2,15 @@
 
 /**
  * reverse_array - reverses given var
- * @n: var to reverse
- *
+ * @a: var to reverse
+ * @n: length of array
  *
  */
 
 void reverse_array(int *a, int n)
 {
 	int i;
-	char temp;
+	int temp;
 
 	i = 0;
 	n--;
