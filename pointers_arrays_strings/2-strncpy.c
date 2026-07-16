@@ -22,7 +22,7 @@ char *_strncpy(char *dest, char *src, int n)
 		sl++;
 	}
 
-	while (i <= sl && i < n)
+	while (i <= sl || i < n)
 	{
 		dest[i] = src[i];
 		i++;
