@@ -30,6 +30,9 @@ int _atoi(char *s)
 		i++;
 	}
 
-	return (sign * (int)n);
+	if (sign == -1)
+		n = -n;
+
+	return ((int)n);
 }
 
