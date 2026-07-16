@@ -26,8 +26,8 @@ char *_strcat(char *dest, char *src)
 	{
 		sl++;
 	}
-	
-	while(i <= sl)
+
+	while (i <= sl)
 	{
 		dest[dl + i] = src[i];
 		i++;
