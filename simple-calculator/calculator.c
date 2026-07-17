@@ -74,6 +74,27 @@ int main(void)
 				"###########\n", result);
 
 		}
+		else if (input == 4)
+		{
+			printf("A: ");
+			scanf("%d", &Ain);
+			printf("B: ");
+			scanf("%d", &Bin);
+			if (Bin == 0)
+			{
+				printf("\n###########\n"
+						"Error: division by zero\n"
+						"###########\n");
+			}
+			else
+			{
+				result = (Ain / Bin);
+				printf("\n###########\n"
+						"Result: %d\n"
+						"###########\n", result);
+			}
+
+		}
 	}
 	return (1);
 }
