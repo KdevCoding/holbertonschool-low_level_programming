@@ -24,8 +24,10 @@ int main(void)
 		scanf("%d", &input);
 
 		if (input == 0)
+		{
 			printf("Bye!");
 			return (1);
+		}
 	}
 	return (1);
 }
