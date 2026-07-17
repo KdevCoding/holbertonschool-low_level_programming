@@ -2,7 +2,7 @@
 
 /** main - a basic calculator
  *
- *
+ *  The calculator uses int and no decimals, it uses def rounding of always down
  *
  */
 
@@ -13,6 +13,7 @@ int main(void)
 	int Ain;
 	int Bin;
 	int result;
+	int numberRead;
 
 	active = 1;
 	input = 5;
@@ -22,6 +23,8 @@ int main(void)
 
 	while (active)
 	{
+		numberRead = 0;
+
 		printf("\n-----------\n"
 				"1) Add\n"
 				"2) Subtract\n"
@@ -29,45 +32,92 @@ int main(void)
 				"4) Divide\n"
 				"0) Quit\n"
 				"Choice: ");
-		scanf("%d", &input);
 
-		if (input == 0)
+		if (scanf("%d", &input) != 1)
+		{
+			printf("!!**Invalid choice**!!");
+			scanf("%*[^\n]"); /* clear scanf buffer, *: dont store, []: what to skip to */
+		}
+		else if (input == 0)
 		{
 			printf("Bye!\n");
 			return (1);
 		}
 		else if (input > 4)
-			printf("Invalid choice\n");
+			printf("!!**Invalid choic**!!e\n");
 		else if (input == 1)
 		{
 			printf("A: ");
-			scanf("%d", &Ain);
+			numberRead = scanf("%d", &Ain);
+			while (numberRead != 1)
+			{
+				printf("!!**Invalid number**!!\n");
+				scanf("%*[^\n]");
+				printf("A: ");
+				numberRead = scanf("%d", &Ain);
+			}
 			printf("B: ");
-			scanf("%d", &Bin);
+			numberRead = scanf("%d", &Bin);
+			while (numberRead != 1)
+			{
+				printf("!!**Invalid number**!!\n");
+				scanf("%*[^\n]");
+				printf("B: ");
+				numberRead = scanf("%d", &Bin);
+			}
 			result = (Ain + Bin);
 			printf("\n###########\n"
-				"Result: %d\n"
-				"###########\n", result);
+					"Result: %d\n"
+					"###########\n", result);
 
 		}
 		else if (input == 2)
 		{
 			printf("A: ");
-			scanf("%d", &Ain);
+			numberRead = scanf("%d", &Ain);
+			while (numberRead != 1)
+			{
+				printf("!!**Invalid number**!!\n");
+				scanf("%*[^\n]");
+				printf("A: ");
+				numberRead = scanf("%d", &Ain);
+			}
 			printf("B: ");
-			scanf("%d", &Bin);
+			numberRead = scanf("%d", &Bin);
+			while (numberRead != 1)
+			{
+				printf("!!**Invalid number**!!\n");
+				scanf("%*[^\n]");
+				printf("B: ");
+				numberRead = scanf("%d", &Bin);
+			}
 			result = (Ain - Bin);
 			printf("\n###########\n"
-				"Result: %d\n"
-				"###########\n", result);
+					"Result: %d\n"
+					"###########\n", result);
 
 		}
 		else if (input == 3)
 		{
 			printf("A: ");
-			scanf("%d", &Ain);
+			numberRead = scanf("%d", &Ain);
+			while (numberRead != 1)
+			{
+				printf("!!**Invalid number**!!\n");
+				scanf("%*[^\n]");
+				printf("A: ");
+				numberRead = scanf("%d", &Ain);
+			}
 			printf("B: ");
-			scanf("%d", &Bin);
+			numberRead = scanf("%d", &Bin);
+			while (numberRead != 1)
+			{
+				printf("!!**Invalid number**!!\n");
+				scanf("%*[^\n]");
+				printf("B: ");
+				numberRead = scanf("%d", &Bin);
+			}
+
 			result = (Ain * Bin);
 			printf("\n###########\n"
 				"Result: %d\n"
@@ -77,9 +127,23 @@ int main(void)
 		else if (input == 4)
 		{
 			printf("A: ");
-			scanf("%d", &Ain);
+			numberRead = scanf("%d", &Ain);
+			while (numberRead != 1)
+			{
+				printf("!!**Invalid number**!!\n");
+				scanf("%*[^\n]");
+				printf("A: ");
+				numberRead = scanf("%d", &Ain);
+			}
 			printf("B: ");
-			scanf("%d", &Bin);
+			numberRead = scanf("%d", &Bin);
+			while (numberRead != 1)
+			{
+				printf("!!**Invalid number**!!\n");
+				scanf("%*[^\n]");
+				printf("B: ");
+				numberRead = scanf("%d", &Bin);
+			}
 			if (Bin == 0)
 			{
 				printf("\n###########\n"
