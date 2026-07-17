@@ -62,6 +62,18 @@ int main(void)
 				"###########\n", result);
 
 		}
+		else if (input == 3)
+		{
+			printf("A: ");
+			scanf("%d", &Ain);
+			printf("B: ");
+			scanf("%d", &Bin);
+			result = (Ain * Bin);
+			printf("\n###########\n"
+				"Result: %d\n"
+				"###########\n", result);
+
+		}
 	}
 	return (1);
 }
