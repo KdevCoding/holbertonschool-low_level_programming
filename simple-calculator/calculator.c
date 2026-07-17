@@ -25,9 +25,12 @@ int main(void)
 
 		if (input == 0)
 		{
-			printf("Bye!");
+			printf("Bye!\n");
 			return (1);
 		}
+		else if (input > 4)
+			printf("Invalid choice\n");
+
 	}
 	return (1);
 }
