@@ -12,7 +12,7 @@ char *string_toupper(char *s)
 	l = 0;
 	while (s[l] != '\0')
 	{
-		if (122 > s[l] && s[l] > 97)
+		if ('z' => s[l] && s[l] => 'a')
 			s[l] -= 32;
 		l++;
 	}
