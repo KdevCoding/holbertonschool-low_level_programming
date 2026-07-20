@@ -48,7 +48,7 @@ char *_strdup(char *str)
 	if (strc == NULL)
 		return (NULL);
 
-	while (i <= size)
+	while (i < size)
 	{
 		strc[i] = str[i];
 		i++;
