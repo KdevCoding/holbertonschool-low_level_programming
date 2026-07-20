@@ -34,6 +34,7 @@ char *_strdup(char *str)
 	char *strc;
 
 	size = _strlen(str);
+	size--;
 	i = 0;
 	/**
 	*  if (size == 0)
