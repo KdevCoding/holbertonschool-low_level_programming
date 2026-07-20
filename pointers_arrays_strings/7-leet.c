@@ -2,27 +2,27 @@
  * leet - encodes a string into leet
  * @s: var to change
  *
- * Return: returns changed string
+ * Return: returns pointer to changed string
  */
 
 char *leet(char *s)
 {
-	int l;
+	char letters[] = "aAeEoOtTlL";
+	char nums[] = "4433007711";
+	int i;
+	int j;
 
-	l = 0;
-	while (s[l] != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (s[l] == 'a' || s[l] == 'A')
-			s[l] = '4';
-		else if (s[l] == 'e' || s[l] == 'E')
-			s[l] = '3';
-		else if (s[l] == 'o' || s[l] == 'O')
-			s[l] = '0';
-		else if (s[l] == 't' || s[l] == 'T')
-			s[l] = '7';
-		else if (s[l] == 'l' || s[l] == 'L')
-			s[l] = '1';
-		l++;
+		j = 0;
+		while (letters[j] != '\0')
+		{
+			if (s[i] == letters[j])
+				s[i] = nums[j];
+			j++;
+		}
+		i++;
 	}
 	return (s);
 }
