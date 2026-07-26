@@ -16,3 +16,5 @@ struct dog
 };
 
 #endif /* _SAMPLE_HEADER_H_ */
+
+void init_dog(struct dog *d, char *name, float age, char *owner);
