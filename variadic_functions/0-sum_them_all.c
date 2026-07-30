@@ -3,7 +3,7 @@
 
 /**
  * sum_them_all - sums given numbers
- * @n: 1st number 2 sum
+ * @n: count of vars
  *
  * Return: total sum
  */
