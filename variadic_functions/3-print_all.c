@@ -18,8 +18,8 @@ void print_str(char *t, int *s)
 		return;
 	}
 
-		printf("%s", t);
-		*s = 1;
+	printf("%s", t);
+	*s = 1;
 }
 
 /**
@@ -36,36 +36,39 @@ void print_all(const char *const format, ...)
 	char *temp;
 	int sep;
 
-	s = format;
 	va_start(ap, format);
 	sep = 0;
-
-	while (*s)
+	while (format != NULL)
 	{
-		if (sep)
-			printf(", ");
-		sep = 0;
-		switch (*s)
+		s = format;
+		while (*s && format != NULL)
 		{
-		case 'c':
-			printf("%c", va_arg(ap, int));
-			sep = 1;
-			break;
-		case 'i':
-			printf("%d", va_arg(ap, int));
-			sep = 1;
-			break;
-		case 'f':
-			printf("%f", va_arg(ap, double));
-			sep = 1;
-			break;
-		case 's':
-			temp = va_arg(ap, char *);
-			print_str(temp, &sep);
-			break;
+			if (sep)
+				printf(", ");
+			sep = 0;
+			switch (*s)
+			{
+			case 'c':
+				printf("%c", va_arg(ap, int));
+				sep = 1;
+				break;
+			case 'i':
+				printf("%d", va_arg(ap, int));
+				sep = 1;
+				break;
+			case 'f':
+				printf("%f", va_arg(ap, double));
+				sep = 1;
+				break;
+			case 's':
+				temp = va_arg(ap, char *);
+				print_str(temp, &sep);
+				break;
+			}
+			s++;
 		}
-		s++;
+		va_end(ap);
+		printf("\n");
+		break;
 	}
-	va_end(ap);
-	printf("\n");
 }
