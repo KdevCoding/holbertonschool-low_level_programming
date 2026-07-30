@@ -15,12 +15,11 @@ void print_str(char *t, int *s)
 	{
 		printf("(nil)");
 		*s = 1;
+		return;
 	}
-	else
-	{
+
 		printf("%s", t);
 		*s = 1;
-	}
 }
 
 /**
