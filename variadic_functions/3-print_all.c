@@ -38,7 +38,7 @@ void print_all(const char *const format, ...)
 
 	va_start(ap, format);
 	sep = 0;
-	while (format != NULL)
+	while (format != NULL) /* I HATE THIS SOLUTION FOR NEEDING AN EXTRA IF*/
 	{
 		s = format;
 		while (*s && format != NULL)
@@ -68,7 +68,7 @@ void print_all(const char *const format, ...)
 			s++;
 		}
 		va_end(ap);
-		printf("\n");
 		break;
 	}
+	printf("\n");
 }
