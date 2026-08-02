@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "3-calc.h"
 
 /**
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
 		a = atoi(argv[1]);
 		b = atoi(argv[3]);
 		op = argv[2];
-		if ((*op == '/' || *op == '%') && b == '0')
+		if ((strcmp(op, "/") == 0 || strcmp(op, "%") == 0) && b == 0)
 		{
 			printf("Error\n");
 			return (100);
