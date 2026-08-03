@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * main - print single linked list
+ * print_list - print single linked list
  * @h: list
  *
  *
@@ -19,7 +19,7 @@ size_t print_list(const list_t *h)
 	{
 		if (h->str == NULL)
 		{
-			printf("[%u] (nul)\n", h->len);
+			printf("[%u] (nil)\n", h->len);
 		}
 		else
 		{
