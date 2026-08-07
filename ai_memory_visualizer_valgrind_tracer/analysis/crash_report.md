@@ -20,10 +20,7 @@ every invocation, with no dependence on input, environment, or timing.
 ## 2. Description of the Crash
 
 `crash_example` terminates via `SIGSEGV` while executing the statement
-`nums[0] = 42;` at `crash_example.c:32` (`crash_example.c:29` in the
-uploaded source view — the compiled binary's own debug line table,
-which is authoritative, reports line 32; both point at the same
-statement). The process is killed by the kernel before it can print the
+`nums[0] = 42;` at `crash_example.c:32`. The process is killed by the kernel before it can print the
 result, call `free()`, or return from `main()`.
 
 ## 3. Root Cause Analysis — the full causal chain

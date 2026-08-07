@@ -370,11 +370,6 @@ nums = 0x0
 n = 0
 ```
 
-(Line number differs slightly, 32 vs. 29, between the uploaded source
-view and the compiled binary's debug info — the compiled binary's own
-line table is authoritative; both point at the same statement,
-`nums[0] = 42;`.)
-
 Only one frame exists at crash time (`main`) — `allocate_numbers` had
 already returned and its frame was already popped before the crash. This
 matters for the memory map: the bug is **not** inside the callee, it's in
