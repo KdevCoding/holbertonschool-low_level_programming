@@ -6,7 +6,7 @@
 /**
  * add_node - adds a new node at begining of a linked list
  * @head: list start
- * @str: str to add at start of list
+ * @n: str to add at start of list
  *
  * Return: address of new element
  */
