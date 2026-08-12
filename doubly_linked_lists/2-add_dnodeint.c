@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * add_node - adds a new node at begining of a linked list
+ * add_dnodeint - adds a new node at begining of a linked list
  * @head: list start
  * @n: str to add at start of list
  *
