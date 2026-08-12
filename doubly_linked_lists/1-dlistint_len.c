@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * print_dlistint - print double linked list
+ * dlistint_len - print double linked list
  * @h: list
  *
  *
