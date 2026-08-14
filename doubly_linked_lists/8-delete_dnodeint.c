@@ -21,7 +21,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 		head = head->next;
 		c++;
 	}
-	
+
 	if (c != index)
 		head = NULL;
 	return (head);
@@ -67,7 +67,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 		next_node = prev_node->next;
 		prev_node->next = next_node->next;
-		next_node->next->prev = prev_node;
+		if (next_node->next != NULL)
+			next_node->next->prev = prev_node;
 		free(next_node);
 	}
 	return (1);
