@@ -26,10 +26,10 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 /**
  * delete_dnodeint_at_index - delete node at index
- * @h: list
- * @index: whhat node
+ * @head: list
+ * @index: what node
  *
- * Return: number of nodes
+ * Return: 1 on succes, -1 of failure
  */
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
@@ -37,13 +37,24 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *prev_node;
 	dlistint_t *next_node;
 
+	if (*head == NULL)
+		return (-1);
+
 	if (index == 0)
 	{
-		prev_node = head;
-
-		next_node = prev_node->next;
-		next_node->prev = NULL;
-		free(prev_node);
+		next_node = *head;
+		if (next_node->next == NULL)
+		{
+			free(*head);
+			*head = NULL;
+		}
+		else
+		{
+			next_node = next_node->next;
+			free(next_node->prev);
+			next_node->prev = NULL;
+			*head = next_node;
+		}
 	}
 	else
 	{
