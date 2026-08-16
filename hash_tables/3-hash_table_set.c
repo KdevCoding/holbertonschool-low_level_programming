@@ -60,12 +60,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (arri == NULL)
 	{
 		ht->array[index] = add_node(ht->array[index], key, value);
-		printf("value: %s\n", ht->array[index]->value);
 	}
 	else
 	{
 		arri->value = strdup(value);
-		printf("value2: %s\n", ht->array[index]->value);
 	}
 
 	if (ht->array[index] == NULL)
