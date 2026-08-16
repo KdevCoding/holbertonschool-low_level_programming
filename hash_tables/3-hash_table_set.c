@@ -11,7 +11,7 @@
  * Return: address of new element
  */
 
-hash_node_t *add_node(hash_node_t *head, const char *key, const char *value)
+hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 {
 	hash_node_t *new;
 
@@ -24,11 +24,11 @@ hash_node_t *add_node(hash_node_t *head, const char *key, const char *value)
 
 	new->key = strdup(key);
 	new->value = strdup(value);
-	new->next = head;
+	new->next = *head;
 
-	head = new;
+	*head = new;
 
-	return (head);
+	return (*head);
 }
 
 /**
@@ -60,12 +60,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (node == NULL)
 	{
-		node = add_node(arri, key, value);
+		add_node(&arri, key, value);
 	}
 	else
-		node->value = strdup(value);
+		arri->value = strdup(value);
 
-	if (node == NULL)
+	if (arri == NULL)
 		return (0);
 
 	return (1);
