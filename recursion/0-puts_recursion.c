@@ -14,9 +14,8 @@ int _strlen(char *s)
 	l = 0;
 	if (s[l] != '\0')
 	{
-		l++;
 		s++;
-		l+= _strlen(s);
+		l += _strlen(s);
 	}
 	return (l);
 }
@@ -32,11 +31,12 @@ void _puts_recursion(char *s)
 {
 	unsigned int i;
 
+	i = 0;
+	_putchar(s[i]);
+
 	if (_strlen(s) == 0)
 		return;
 
-	i = 0;
-	_putchar(s[i]);
 	s++;
 	if (s[i] != '\0')
 	{
