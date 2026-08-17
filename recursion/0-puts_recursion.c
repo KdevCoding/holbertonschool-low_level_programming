@@ -12,9 +12,11 @@ int _strlen(char *s)
 	int l;
 
 	l = 0;
-	while (s[l] != '\0')
+	if (s[l] != '\0')
 	{
 		l++;
+		s++;
+		l+= _strlen(s);
 	}
 	return (l);
 }
