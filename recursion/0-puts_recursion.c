@@ -33,11 +33,14 @@ void _puts_recursion(char *s)
 	unsigned int i;
 
 	i = 0;
-	_putchar(s[i]);
 
 	if (_strlen(s) == 0)
+	{
+		_putchar('\n');
 		return;
+	}
 
+	_putchar(s[i]);
 	s++;
 	if (s[i] != '\0')
 	{
