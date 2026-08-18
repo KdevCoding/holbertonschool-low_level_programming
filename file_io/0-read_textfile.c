@@ -23,14 +23,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buff == NULL)
 		return (0);
 
-	fd = open(filename, 0);
+	fd = open(filename, O_RDONLY);
 	charp = read(fd, buff, letters);
 	if (charp == -1)
 		return (0);
 	else if (charp > 0)
 		letters = charp;
 	close(fd);
-	charp = write(0, buff, letters);
+	charp = write(STDOUT_FILENO, buff, letters);
 
 	if (charp != (ssize_t)letters)
 		charp = 0;
