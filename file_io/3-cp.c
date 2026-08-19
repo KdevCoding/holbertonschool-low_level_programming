@@ -48,12 +48,6 @@ int create_filecp(const char *filename, char *text_content, size_t letters)
 		exit(100);
 	}
 
-	if (out < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
-		exit(99);
-	}
-
 	return (out);
 }
 
@@ -74,23 +68,22 @@ int read_textfilecp(const char *filename, char *file_create)
 	if (filename == NULL)
 		exit(98);
 	fd = open(file_create, O_WRONLY | O_TRUNC | O_CREAT, 0664);
-	if (close(fd) != 0)
+	if (fd < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
-		exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		exit(99);
 	}
-
+	close(fd);
 	fd = open(filename, O_RDONLY);
 	charp = 1;
 	while (charp != 0)
 	{
-		charp = read(fd, buff, (size_t)1024);
+		charp = read(fd, buff, (size_t)1023);
 		if (charp == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 			exit(98);
 		}
-
 		create_filecp(file_create, buff, charp);
 		i = 0;
 		while (buff[i] != '\0')
