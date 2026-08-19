@@ -38,16 +38,15 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 
 	fd = open(filename, O_RDWR | O_APPEND);
-	if (fd != -1)
+	if (fd == -1)
 		return(fd);
 
 	if (text_content != NULL)
 		out = write(fd, text_content, _strlen(text_content));
 	
-	out = 1;
-
 	close(fd);
-	if (out > 1)
-		out = 1;
-	return (out);
+	if (out >= 0)
+		return (1);
+	else
+		return (-1);
 }
