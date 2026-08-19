@@ -26,6 +26,7 @@ int _strlen(char *s)
  * create_filecp - creates a file
  * @filename: file to create
  * @text_content: text to write
+ * @letters: amounts of chars to read/write
  *
  * Return: 1 on success else -1
  */
@@ -57,8 +58,8 @@ int create_filecp(const char *filename, char *text_content, size_t letters)
 /**
  * read_textfilecp - writes chars from file
  * @filename: file to read from
- * @letters: amounts of chars to read/write
- * @buff: buffer to write to
+ * @file_create: file to write to
+ *
  * Return: 0 on error/no write, otherwise amount of chars written
  */
 int read_textfilecp(const char *filename, char *file_create)
