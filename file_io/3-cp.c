@@ -70,7 +70,7 @@ int read_textfilecp(const char *filename, char *file_create)
 	fd = open(file_create, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (fd < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_create);
 		exit(99);
 	}
 	close(fd);
