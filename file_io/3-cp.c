@@ -38,7 +38,7 @@ int create_filecp(const char *filename, char *text_content, size_t letters)
 	if (letters == 0)
 		letters = _strlen(text_content);
 
-	fd = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0664);
+	fd = open(filename, O_WRONLY | O_APPEND);
 	out = 0;
 	out = write(fd, text_content, letters);
 
@@ -68,10 +68,17 @@ int read_textfilecp(const char *filename, char *file_create)
 {
 	int fd;
 	int charp;
+	int i;
 	char buff[1024];
 
 	if (filename == NULL)
 		exit(98);
+	fd = open(file_create, O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	if (close(fd) != 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
+		exit(100);
+	}
 
 	fd = open(filename, O_RDONLY);
 	charp = 1;
@@ -85,6 +92,12 @@ int read_textfilecp(const char *filename, char *file_create)
 		}
 
 		create_filecp(file_create, buff, charp);
+		i = 0;
+		while (buff[i] != '\0')
+		{
+			buff[i] = '\0';
+			i++;
+		}
 	}
 	if (close(fd) != 0)
 	{
