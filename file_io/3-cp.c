@@ -35,9 +35,11 @@ int create_filecp(const char *filename, char *text_content, size_t letters)
 	int fd;
 	int out;
 
+	if (letters == 0)
+		letters = _strlen(text_content);
+
 	fd = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0664);
 	out = 0;
-
 	out = write(fd, text_content, letters);
 
 	if (close(fd) != 0)
