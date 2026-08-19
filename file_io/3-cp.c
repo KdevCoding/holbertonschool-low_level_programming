@@ -29,7 +29,7 @@ int _strlen(char *s)
  *
  * Return: 1 on success else -1
  */
-int create_filecp(const char *filename, char *text_content)
+int create_filecp(const char *filename, char *text_content, size_t letters)
 {
 	int fd;
 	int out;
@@ -37,7 +37,7 @@ int create_filecp(const char *filename, char *text_content)
 	fd = open(filename, O_RDWR | O_APPEND | O_CREAT, 0664);
 	out = 0;
 
-	out = write(fd, text_content, _strlen(text_content));
+	out = write(fd, text_content, letters);
 
 	if (close(fd) != 0)
 	{
@@ -74,14 +74,14 @@ int read_textfilecp(const char *filename, char *file_create)
 	charp = 1;
 	while (charp != 0)
 	{
-		charp = read(fd, buff, (size_t)1023);
+		charp = read(fd, buff, (size_t)1024);
 		if (charp == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 			exit(98);
 		}
 
-		create_filecp(file_create, buff);
+		create_filecp(file_create, buff, charp);
 	}
 	if (close(fd) != 0)
 	{
