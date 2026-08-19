@@ -75,7 +75,7 @@ int read_textfilecp(const char *filename, char *file_create)
 	}
 	close(fd);
 	fd = open(filename, O_RDONLY);
-	charp = 1;
+	charp = read(fd, buff, (size_t)1023);
 	while (charp != 0)
 	{
 		charp = read(fd, buff, (size_t)1023);
